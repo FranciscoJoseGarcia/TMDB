@@ -38,6 +38,10 @@ User.init(
     salt: {
       type: S.STRING,
     },
+    favorites: {
+      type: S.ARRAY(S.STRING),
+      defaultValue: [],
+    },
   },
   { sequelize: db, modelName: "user" }
 );

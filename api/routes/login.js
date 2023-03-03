@@ -16,6 +16,7 @@ loginRouter.post("/", (req, res) => {
         email: user.dataValues.email,
         firstName: user.dataValues.firstName,
         lastName: user.dataValues.lastName,
+        favorites: user.dataValues.favorites,
       };
 
       const token = generateToken(payload);

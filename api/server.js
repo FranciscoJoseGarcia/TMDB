@@ -5,7 +5,7 @@ const app = express();
 const volleyball = require("volleyball");
 const routes = require("./routes");
 const db = require("./db");
-const models = require("../api/models"); //VER SI DESPUES SE PUEDE SACAR
+const models = require("../api/models");
 
 // logging middleware
 app.use(volleyball);

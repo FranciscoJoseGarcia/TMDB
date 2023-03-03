@@ -24,7 +24,7 @@ const Navbar = () => {
     <nav className="navbar bg-primary" data-bs-theme="dark">
       <div className="container-fluid">
         {user.firstName ? (
-          <Link to={"/profile"}>
+          <Link to={"/profile/movies"}>
             <strong style={{ textDecoration: "none", color: "white" }}>
               TMDB
             </strong>
@@ -44,7 +44,22 @@ const Navbar = () => {
         >
           {user.firstName ? (
             <>
-              <strong>{user.firstName}</strong>
+              <strong>Hi, {user.firstName}!</strong>
+              <Link to={"/profile/favorites"}>
+                <button className="btn btn-outline-light" type="submit">
+                  Favorites
+                </button>
+              </Link>
+              <Link to={"/profile/movies"}>
+                <button className="btn btn-outline-light" type="submit">
+                  Movies
+                </button>
+              </Link>
+              <Link to={"/profile/tv_shows"}>
+                <button className="btn btn-outline-light" type="submit">
+                  Tv Shows
+                </button>
+              </Link>
               <button
                 onClick={handleLogout}
                 className="btn btn-outline-light"

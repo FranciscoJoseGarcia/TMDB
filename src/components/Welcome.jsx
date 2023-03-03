@@ -1,9 +1,5 @@
 const Welcome = () => {
-  return (
-    <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
-      Bienvenido a The Movie Database!
-    </h2>
-  );
+  return <h1 className="mt-5 text-center ">Welcome to The Movie Database!</h1>;
 };
 
 export default Welcome;

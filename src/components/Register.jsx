@@ -25,60 +25,61 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full">
-        <div>
-          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
-            Create your account
-          </h2>
+    <div>
+      <h2 className="mt-5 mb-5 text-center">Create your account</h2>
+
+      <form className="mt-8 text-center" onSubmit={handleSubmit}>
+        <div className="mt-2">
+          <input
+            aria-label="First Name"
+            type="text"
+            required
+            placeholder="First Name"
+            {...firstName}
+            style={{ borderRadius: "5px" }}
+          />
         </div>
-        <form className="mt-8" onSubmit={handleSubmit}>
-          <input type="hidden" name="remember" value="true" />
-          <div className="rounded-md shadow-sm">
-            <div className="-mt-px">
-              <input
-                aria-label="First Name"
-                type="text"
-                required
-                placeholder="Name"
-                {...firstName}
-              />
-            </div>
 
-            <div className="-mt-px">
-              <input
-                aria-label="Last Name"
-                type="text"
-                required
-                placeholder="Last Name"
-                {...lastName}
-              />
-            </div>
-            <div>
-              <input
-                aria-label="Email address"
-                type="text"
-                required
-                placeholder="Email address"
-                {...email}
-              />
-            </div>
-            <div className="-mt-px">
-              <input
-                aria-label="Password"
-                type="password"
-                required
-                placeholder="Password"
-                {...password}
-              />
-            </div>
-          </div>
+        <div className="mt-2">
+          <input
+            aria-label="Last Name"
+            type="text"
+            required
+            placeholder="Last Name"
+            {...lastName}
+            style={{ borderRadius: "5px" }}
+          />
+        </div>
+        <div className="mt-2">
+          <input
+            aria-label="Email address"
+            type="text"
+            required
+            placeholder="Email address"
+            {...email}
+            style={{ borderRadius: "5px" }}
+          />
+        </div>
+        <div className="mt-2">
+          <input
+            aria-label="Password"
+            type="password"
+            required
+            placeholder="Password"
+            {...password}
+            style={{ borderRadius: "5px" }}
+          />
+        </div>
 
-          <div className="mt-6">
-            <button type="submit">Sign up</button>
-          </div>
-        </form>
-      </div>
+        <div className="mt-6">
+          <button
+            className="mt-2 btn btn-outline-dark bg-primary"
+            type="submit"
+          >
+            Sign up
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
