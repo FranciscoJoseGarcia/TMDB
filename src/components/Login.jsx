@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useInput from "../hooks/useInput";
-import { Link } from "react-router-dom";
+
 import { setUser } from "../state/user";
 import { useDispatch } from "react-redux";
 

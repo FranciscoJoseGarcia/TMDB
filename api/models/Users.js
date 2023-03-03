@@ -42,6 +42,14 @@ User.init(
       type: S.ARRAY(S.STRING),
       defaultValue: [],
     },
+    fullName: {
+      type: S.VIRTUAL,
+      get() {
+        return `${this.getDataValue("firstName")} ${this.getDataValue(
+          "lastName"
+        )}`;
+      },
+    },
   },
   { sequelize: db, modelName: "user" }
 );

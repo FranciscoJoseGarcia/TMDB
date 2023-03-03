@@ -68,7 +68,7 @@ const Content = ({ movie, trailer }) => {
                     Play Trailer
                   </button>
                 ) : (
-                  "Sorry, no trailer available"
+                  "There is no trailer available"
                 )}
                 <h1 className="text-white">{movie.title}</h1>
                 <p className="text-white">{movie.overview}</p>

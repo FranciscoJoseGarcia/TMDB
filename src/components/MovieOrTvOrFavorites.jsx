@@ -43,9 +43,9 @@ const MovieOrTvOrFavorites = () => {
     }
   };
 
-  // pido una sola pelicula o tvshow y muestro en reproductor de videos
+  //funcion para buscar la pelicula seleccionada
   const fetchMovie = async (id) => {
-    const { data } = await axios.get(`${API_URL}/${url}${id}`, {
+    const { data } = await axios.get(`${API_URL}/${url}/${id}`, {
       params: {
         api_key: API_KEY,
         append_to_response: "videos",
@@ -56,10 +56,9 @@ const MovieOrTvOrFavorites = () => {
       const trailer = data.videos.results.find(
         (vid) => vid.name === "Official Trailer"
       );
+      //seteo trailer
+      setTrailer(trailer ? trailer : data.videos.results[0]);
     }
-    //seteo trailer
-    setTrailer(trailer ? trailer : data.videos.results[0]);
-
     //return data
     setMovie(data);
   };
@@ -67,7 +66,6 @@ const MovieOrTvOrFavorites = () => {
   const selectMovie = async (movie) => {
     fetchMovie(movie.id);
     setMovie(movie);
-
     window.scrollTo(0, 0);
   };
 
@@ -76,6 +74,7 @@ const MovieOrTvOrFavorites = () => {
     e.preventDefault();
     fetchMovies(searchKey);
   };
+
   //renderizacion inicial
   useEffect(() => {
     if (url === "movie" || url === "tv") fetchMovies();
